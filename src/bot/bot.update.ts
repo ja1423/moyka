@@ -167,18 +167,18 @@ export class UpdateBot {
   // @Hears('bir')
   // async hearBir()
 
-  // @On('text')
-  // async onText(@Ctx() ctx: Context) {
-  //   console.log(ctx);
+  @On('text')
+  async onText(@Ctx() ctx: Context) {
+    console.log(ctx);
 
-  //   if ('text' in ctx.message) {
-  //     if (ctx.message.text == 'salom') {
-  //       await ctx.replyWithHTML('<b>Hello</b>');
-  //     } else {
-  //       await ctx.replyWithHTML(ctx.message.text);
-  //     }
-  //   }
-  // }
+    if ('text' in ctx.message) {
+      if (ctx.message.text == 'Avtomoyka xizmatini tanlaganingizdan xursandmiz') {
+        await ctx.replyWithHTML('<b>Avtomoyka xizmatiga xush kelibsz</b>');
+      } else {
+        await ctx.replyWithHTML(ctx.message.text);
+      }
+    }
+  }
 
   // @On('message')
   // async onMessage(@Ctx() ctx: Context) {

@@ -15,14 +15,14 @@ import { v4 } from 'uuid';
 import { LoginUserDto } from './dto/login-user.dto';
 import { FindUserDto } from './dto/find-user.dto';
 import { Op } from 'sequelize';
-import { BotService } from '../bot/bot.service';
+// import { BotService } from '../bot/bot.service';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectModel(User) private readonly userRepo: typeof User,
     private readonly jwtService: JwtService,
-    private readonly botService: BotService,
+    // private readonly botService: BotService,
   ) {}
 
   async getTokens(user: User) {

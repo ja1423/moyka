@@ -12,7 +12,7 @@ export class BotService {
     @InjectBot(BOT_NAME) private readonly bot: Telegraf<Context>,
   ) {}
   async start(ctx: Context) {
-    const userId = ctx.from.id;
+    const userId = ctx.from.id; 
     const user = await this.botRepo.findOne({ where: { user_id: userId } });
     if (!user) {
       await this.botRepo.create({
@@ -47,7 +47,7 @@ export class BotService {
     } else {
       await this.bot.telegram.sendChatAction(user.user_id, 'typing');
       await ctx.reply(
-        `Bu bot orqali Stadium dasturi bilan muloqot o'rnatiladi!`,
+        `Bu bot orqali sz uchun avtomoyka xizmatlarini ko'rsatamiz`,
         {
           parse_mode: 'HTML',
           ...Markup.removeKeyboard(),
